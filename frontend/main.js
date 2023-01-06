@@ -3,15 +3,15 @@ window.addEventListener('DOMContentLoaded', (event) =>{
 
 })
 
-const functionApi = '';
+const functionApi = 'http://localhost:7071/api/visitercounter';
 
 const getVisitCount =  () => {
     let Count = 30;
     fetch(functionApi).then(response => {
-        return response.json
+        return response.json()
     }).then(response =>{
         console.log("Website called function API.");
-        Count = response.Count;
+        Count = response.count;
         document.getElementById("counter").innerText = Count;
     }).catch(function(error){
         console.log(error);

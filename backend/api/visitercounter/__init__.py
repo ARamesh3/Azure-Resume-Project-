@@ -19,8 +19,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     
     item_id = "1"
     item = container.read_item(item_id, partition_key="1")
+    json_data = json.dumps(item)
     count = item["count"]
     updated_count = int(count)+1
     item["count"]= updated_count
     container.replace_item(item_id,item,partition_key="1")
-    return func.HttpResponse(str(item))
+    return func.HttpResponse(json_data)
