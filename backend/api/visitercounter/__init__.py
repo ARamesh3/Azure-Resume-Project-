@@ -23,4 +23,4 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     updated_count = int(count)+1
     item["count"]= updated_count
     container.replace_item(item_id,item,partition_key="1")
-    return func.HttpResponse(str(type(item)))
+    return func.HttpResponse(str(item))
