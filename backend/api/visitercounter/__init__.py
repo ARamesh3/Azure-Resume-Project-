@@ -4,7 +4,7 @@ from azure.cosmos import CosmosClient, partition_key
 import os 
 import json
 
-
+logging.basicConfig(level= logging.DEBUG)
 def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
     
