@@ -4,7 +4,4 @@
 
 azure-functions
 azure.cosmos
-os
-json 
-logging
 
